@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI','Roboto',sans-serif;-webkit-font-smoothing:antialiased;background:#000;color:#fff;overflow-x:hidden}
+#root{min-height:100vh}
+html{scroll-behavior:smooth}
+::-webkit-scrollbar{display:none}
+*{scrollbar-width:none;-ms-overflow-style:none}
+
+.glass-nav{background:rgba(255,255,255,0.06);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(255,255,255,0.1);box-shadow:0 4px 30px rgba(0,0,0,0.3),inset 0 1px 0 rgba(255,255,255,0.06)}
+.glass-pill{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.1)}
+.glass-card{background:rgba(255,255,255,0.04);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);border:1px solid rgba(255,255,255,0.08);box-shadow:0 8px 32px rgba(0,0,0,0.2);transition:all 0.4s ease}
+.glass-card:hover{background:rgba(255,255,255,0.07);border-color:rgba(255,255,255,0.12)}
+
+.glass-btn-primary{background:rgba(255,255,255,0.95);color:#0a0a0a;border:none;box-shadow:0 2px 16px rgba(255,255,255,0.15)}
+.glass-btn-primary:hover{background:rgba(255,255,255,1);box-shadow:0 4px 24px rgba(255,255,255,0.25)}
+.glass-btn{background:rgba(255,255,255,0.06);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.2)}
+.glass-btn:hover{background:rgba(255,255,255,0.1);border-color:rgba(255,255,255,0.3)}
+
+.skill-chip{background:rgba(255,255,255,0.05);color:rgba(255,255,255,0.7);border:1px solid rgba(255,255,255,0.08);transition:all 0.3s ease}
+.skill-chip:hover{background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.9);border-color:rgba(255,255,255,0.15)}
+
+.hero-title{color:white;text-shadow:0 0 80px rgba(82,39,255,0.3);letter-spacing:-0.03em}
+.section-title{color:white;letter-spacing:-0.02em}
+
+.scroll-fill{background:linear-gradient(to bottom,rgba(255,255,255,0.5),rgba(130,100,255,0.5),rgba(82,39,255,0.4));border-radius:0 0 2px 2px}
+.scroll-dot{background:radial-gradient(circle,rgba(200,190,255,0.9) 0%,rgba(130,100,255,0.7) 70%);box-shadow:0 0 6px 2px rgba(130,100,255,0.5),0 0 14px 4px rgba(82,39,255,0.25);transition:opacity 0.3s ease}
+
+.vignette{position:fixed;inset:0;z-index:2;background:radial-gradient(ellipse at center,transparent 40%,rgba(0,0,0,0.5) 100%);pointer-events:none}
+
+.reveal-item{opacity:0;transform:translateY(40px);transition:opacity 0.7s cubic-bezier(0.16,1,0.3,1),transform 0.7s cubic-bezier(0.16,1,0.3,1);will-change:opacity,transform}
+.reveal-item.revealed{opacity:1;transform:translateY(0)}
+
+@keyframes fade-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.animate-fade-in{animation:fade-in 0.8s ease-out both}
+.animate-fade-in-delay{animation:fade-in 0.8s ease-out 0.15s both}
+.animate-fade-in-delay-2{animation:fade-in 0.8s ease-out 0.3s both}
+
+section{scroll-margin-top:80px}
+a{transition:all 0.2s ease}
+button{transition:all 0.2s ease;cursor:pointer}
+button:active{transform:scale(0.98)}
+.fixed{transform:translateZ(0);backface-visibility:hidden}

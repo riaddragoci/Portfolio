@@ -1,0 +1,51 @@
+/* Lightweight animated gradient background - alternative to Plasma */
+.gradient-background {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: linear-gradient(
+    -45deg,
+    #000000,
+    #0a0a1a,
+    #1a0a2e,
+    #16213e,
+    #0f3460
+  );
+  background-size: 400% 400%;
+  animation: gradient-flow 15s ease infinite;
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Radial overlay for depth */
+.gradient-background::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    circle at 50% 50%,
+    transparent 0%,
+    rgba(99, 102, 241, 0.1) 50%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+  animation: radial-pulse 8s ease-in-out infinite;
+}
+
+@keyframes radial-pulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.6;
+  }
+}
