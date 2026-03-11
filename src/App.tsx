@@ -96,7 +96,9 @@ function App() {
 
       <div className="relative z-10">
         <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
-          <div className="glass-nav flex items-center py-2 px-2 rounded-full">
+          <div className="glass-nav flex items-center gap-1 px-2 py-2 rounded-full">
+            <span className="text-white font-bold text-lg px-4 tracking-tight">RD</span>
+            <div className="w-px h-5 bg-white/20 mx-1" />
             {['Home', 'About', 'Projects', 'Skills', 'Contact'].map((s) => (
               <button key={s} onClick={() => scrollToSection(s.toLowerCase())} className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-300 ${activeSection === s.toLowerCase() ? 'bg-white/15 text-white' : 'text-white/60 hover:text-white hover:bg-white/10'}`}>{s}</button>
             ))}
