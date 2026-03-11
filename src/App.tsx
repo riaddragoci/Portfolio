@@ -95,7 +95,7 @@ function App() {
       </div>
 
       <div className="relative z-10">
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <nav className="fixed top-6 inset-x-0 z-50 flex justify-center">
           <div className="glass-nav flex items-center gap-1 px-2 py-2 rounded-full">
             <span className="text-white font-bold text-lg px-4 tracking-tight">RD</span>
             <div className="w-px h-5 bg-white/20 mx-1" />
