@@ -83,7 +83,7 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <div className="fixed inset-0 z-0 bg-black">
-        <LightPillar topColor="#5227FF" bottomColor="#FF9FFC" intensity={1.0} rotationSpeed={0.3} glowAmount={0.005} pillarWidth={3.0} pillarHeight={0.4} noiseIntensity={0.5} quality="high" />
+        <LightPillar topColor="#5227FF" bottomColor="#FF9FFC" intensity={1.0} rotationSpeed={0.3} glowAmount={0.005} pillarWidth={3.0} pillarHeight={0.4} noiseIntensity={0.5} quality="medium" />
       </div>
       <div className="fixed inset-0 z-[1] bg-black/20 pointer-events-none" />
       <div className="vignette" />
