@@ -59,7 +59,7 @@ function App() {
   }, []);
 
   const projects = [
-    { title: 'JobFit Multi-Agent', subtitle: 'AI-Powered CV ↔ JD Matcher', tech: ['React', 'TypeScript', 'FastAPI', 'Python', 'Ollama', 'LLaMA 3.1'], description: 'Full-stack web application using a multi-agent AI architecture to analyse CV-to-job-description alignment, powered by local LLMs.', highlights: ['Built 5 specialized AI agents: JD extractor, CV parser, match scorer, advice generator, and CV rewriter', 'Designed a React dashboard with score gauge, skills breakdown, and CV rewrite suggestions', 'Implemented transparent weighted scoring (60% required skills, 15% preferred, 15% keywords, 10% red flags)', 'Anti-hallucination guardrails prevent the system from inventing experience'], link: 'https://github.com/riaddragoci/jobfit-multi-agent' },
+    { title: 'JobFit Multi-Agent', subtitle: 'AI-Powered CV \u2194 JD Matcher', tech: ['React', 'TypeScript', 'FastAPI', 'Python', 'Ollama', 'LLaMA 3.1'], description: 'Full-stack web application using a multi-agent AI architecture to analyse CV-to-job-description alignment, powered by local LLMs.', highlights: ['Built 5 specialized AI agents: JD extractor, CV parser, match scorer, advice generator, and CV rewriter', 'Designed a React dashboard with score gauge, skills breakdown, and CV rewrite suggestions', 'Implemented transparent weighted scoring (60% required skills, 15% preferred, 15% keywords, 10% red flags)', 'Anti-hallucination guardrails prevent the system from inventing experience'], link: 'https://github.com/riaddragoci/jobfit-multi-agent' },
     { title: 'Checkout System Simulation', subtitle: 'Event-Driven Architecture', tech: ['Python', 'Scheme'], description: 'Designed and implemented an event-driven checkout simulation modelling customer flow and queue behaviour.', highlights: ['Built object-oriented and functional components for lane state management', 'Applied recursion and data structures to model real-world system behaviour', 'Implemented customer prioritisation and checkout event handling'] },
     { title: 'ML Classification Model', subtitle: 'Breast Cancer Detection', tech: ['Python', 'Logistic Regression', 'Scikit-learn'], description: 'Built a supervised classification model using the Breast Cancer Wisconsin Diagnostic Dataset.', highlights: ['Performed comprehensive data preprocessing and feature scaling', 'Evaluated model performance using accuracy, precision, recall, and F1-score', 'Achieved ~96% classification accuracy on unseen test data'] },
     { title: 'Big Data Processing', subtitle: 'Data Warehousing Pipeline', tech: ['Hadoop', 'Hive', 'MapReduce'], description: 'Designed a Hive-based data warehouse using star schema with partitioned fact tables.', highlights: ['Implemented MapReduce logic for efficient large dataset aggregation', 'Loaded, queried, and validated data stored in HDFS using HiveQL', 'Built scalable architecture for big data analytics'] },
@@ -71,7 +71,7 @@ function App() {
     { title: 'AI & Machine Learning', items: ['Supervised Learning', 'Classification', 'Feature Engineering', 'Model Evaluation'] },
     { title: 'Programming Languages', items: ['Python', 'Java', 'JavaScript', 'C++'] },
     { title: 'Data & Systems', items: ['Hadoop', 'Hive', 'MapReduce', 'HDFS'] },
-    { title: 'Web Technologies', items: ['React', 'TypeScript', 'Tailwind CSS', 'FastAPI', 'Vite', 'HTML', 'CSS'] },
+    { title: 'Web Technologies', items: ['HTML', 'CSS', 'React', 'TypeScript', 'Tailwind CSS'] },
     { title: 'Core Concepts', items: ['OOP', 'Data Structures', 'Event-Driven Design', 'Networking Fundamentals'] },
   ];
 
@@ -83,7 +83,7 @@ function App() {
   return (
     <div className="min-h-screen relative">
       <div className="fixed inset-0 z-0 bg-black">
-        <LightPillar topColor="#5227FF" bottomColor="#FF9FFC" intensity={1.0} rotationSpeed={0.3} glowAmount={0.005} pillarWidth={3.0} pillarHeight={0.4} noiseIntensity={0.5} quality="high" />
+        <LightPillar topColor="#5227FF" bottomColor="#FF9FFC" intensity={1.0} rotationSpeed={0.3} glowAmount={0.005} pillarWidth={3.0} pillarHeight={0.4} noiseIntensity={0.5} quality="medium" />
       </div>
       <div className="fixed inset-0 z-[1] bg-black/20 pointer-events-none" />
       <div className="vignette" />
@@ -95,7 +95,7 @@ function App() {
       </div>
 
       <div className="relative z-10">
-        <nav className="fixed top-6 left-1/2 -translate-x-1/2 z-50">
+        <nav className="fixed top-6 inset-x-0 z-50 flex justify-center">
           <div className="glass-nav flex items-center gap-1 px-2 py-2 rounded-full">
             <span className="text-white font-bold text-lg px-4 tracking-tight">RD</span>
             <div className="w-px h-5 bg-white/20 mx-1" />
@@ -206,11 +206,11 @@ function App() {
             <div className="grid md:grid-cols-2 gap-6">
               {projects.map((project, index) => (
                 <Reveal key={index} delay={200 + index * 100}>
-                  <div className="glass-card p-6 rounded-2xl h-full flex flex-col">
+                  <div className="glass-card p-6 rounded-2xl h-full">
                     <div className="flex items-start justify-between mb-3">
                       <div><h3 className="text-xl font-bold text-white">{project.title}</h3><p className="text-white/40 text-sm mt-0.5">{project.subtitle}</p></div>
-                      {'link' in project && project.link ? (
-                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white/30 hover:text-purple-400 transition-colors text-lg">↗</a>
+                      {project.link ? (
+                        <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-white/20 hover:text-purple-400 transition-colors text-lg">↗</a>
                       ) : (
                         <span className="text-white/20 text-lg">↗</span>
                       )}
@@ -219,7 +219,7 @@ function App() {
                       {project.tech.map((tech, i) => (<span key={i} className="px-3 py-1 bg-purple-500/10 text-purple-300/80 text-xs rounded-full border border-purple-500/20">{tech}</span>))}
                     </div>
                     <p className="text-white/50 text-sm mb-4 leading-relaxed">{project.description}</p>
-                    <ul className="space-y-1.5 flex-1">
+                    <ul className="space-y-1.5">
                       {project.highlights.map((h, i) => (<li key={i} className="flex items-start text-sm text-white/40"><span className="text-purple-400/50 mr-2">›</span><span>{h}</span></li>))}
                     </ul>
                   </div>
